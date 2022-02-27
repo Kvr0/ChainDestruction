@@ -7,6 +7,7 @@
 ## カウンタリセット
     scoreboard players set $chaindestruction:start/_.count temporary 0
     execute unless score $chaindestruction:start/_.max temporary matches -2147483648..2147483647 run scoreboard players set $chaindestruction:start/_.max temporary 2147483647
+    execute unless score $chaindestruction:start/_.maxcount temporary matches -2147483648..2147483647 store result score $chaindestruction:start/_.maxcount temporary run data get storage calculation: input.tool.tag.ChainDestruction.Limit 1
     execute unless score $chaindestruction:start/_.maxcount temporary matches -2147483648..2147483647 run scoreboard players set $chaindestruction:start/_.maxcount temporary 8
     scoreboard players set $chaindestruction:start/check/dig.result temporary 1
 
@@ -37,7 +38,7 @@
     execute as @e[tag=ChainDestruction,tag=new,limit=1] at @s positioned ~1 ~ ~ run function chaindestruction:start/check/px
 ## Y-
     scoreboard players set $chaindestruction:start/_.count temporary 0
-    execute unless data storage calculation: input.tool.tag{IgnoreUnder:1b} as @e[tag=ChainDestruction,tag=new,limit=1] at @s positioned ~ ~-1 ~ run function chaindestruction:start/check/my
+    execute unless data storage calculation: input.tool.tag{ChainDestruction:{IgnoreUnder:1b}} as @e[tag=ChainDestruction,tag=new,limit=1] at @s positioned ~ ~-1 ~ run function chaindestruction:start/check/my
 ## Y+
     scoreboard players set $chaindestruction:start/_.count temporary 0
     execute as @e[tag=ChainDestruction,tag=new,limit=1] at @s positioned ~ ~1 ~ run function chaindestruction:start/check/py
