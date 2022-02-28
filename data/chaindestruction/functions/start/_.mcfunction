@@ -15,6 +15,9 @@
     execute unless score $chaindestruction:start/_.ignoreunder temporary matches -2147483648..2147483647 store result score $chaindestruction:start/_.ignoreunder temporary run data get storage calculation: input.tool.tag.ChainDestruction.IgnoreUnder
     execute unless score $chaindestruction:start/_.ignoreunder temporary matches -2147483648..2147483647 run scoreboard players set $chaindestruction:start/_.ignoreunder temporary 0
 
+## IDの無視
+    execute unless score $chaindestruction:start/_.ignoreid temporary matches -2147483648..2147483647 run scoreboard players set $chaindestruction:start/_.ignoreid temporary 0
+
 ## 座標カウンタ
     scoreboard players set $-1 temporary -1
     scoreboard players operation $chaindestruction:start/_.mincount temporary = $chaindestruction:start/_.maxcount temporary

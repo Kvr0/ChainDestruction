@@ -38,7 +38,6 @@
     execute if data storage moreloot: result.tool.tag.display{Name:'{"text":"Chain5"}'} run scoreboard players set $chaindestruction:start/_.maxcount temporary 5
     execute if data storage moreloot: result.tool.tag.display{Name:'{"text":"Chain6"}'} run scoreboard players set $chaindestruction:start/_.maxcount temporary 6
     execute if data storage moreloot: result.tool.tag.display{Name:'{"text":"Chain7"}'} run scoreboard players set $chaindestruction:start/_.maxcount temporary 7
-    execute if data storage moreloot: result.tool.tag.display{Name:'{"text":"ド=ヒバホセ ガスゲヅ アノゼヅタケ イグヴジ ナブ"}'} run scoreboard players set $chaindestruction:start/_.maxcount temporary 100
 
     execute if data storage moreloot: result.tool.tag.display{Name:'{"text":"Chain1I"}'} run scoreboard players set $chaindestruction:start/_.maxcount temporary 1
     execute if data storage moreloot: result.tool.tag.display{Name:'{"text":"Chain2I"}'} run scoreboard players set $chaindestruction:start/_.maxcount temporary 2
@@ -55,6 +54,14 @@
     execute if data storage moreloot: result.tool.tag.display{Name:'{"text":"Chain5I"}'} run scoreboard players set $chaindestruction:start/_.ignoreunder temporary 1
     execute if data storage moreloot: result.tool.tag.display{Name:'{"text":"Chain6I"}'} run scoreboard players set $chaindestruction:start/_.ignoreunder temporary 1
     execute if data storage moreloot: result.tool.tag.display{Name:'{"text":"Chain7I"}'} run scoreboard players set $chaindestruction:start/_.ignoreunder temporary 1
+
+#> Hammer
+    execute if data storage moreloot: result.tool.tag.display{Name:'{"text":"Hammer"}'} run scoreboard players set $chaindestruction:start/_.maxcount temporary 1
+    execute if data storage moreloot: result.tool.tag.display{Name:'{"text":"Hammer"}'} run scoreboard players set $chaindestruction:start/_.ignoreid temporary 1
+
+#> 呪文
+    execute if data storage moreloot: result.tool.tag.display{Name:'{"text":"ド=ヒバホセ ガスゲヅ アノゼヅタケ イグヴジ ナブ"}'} run scoreboard players set $chaindestruction:start/_.maxcount temporary 7
+    execute if data storage moreloot: result.tool.tag.display{Name:'{"text":"ド=ヒバホセ ガスゲヅ アノゼヅタケ イグヴジ ナブ"}'} run scoreboard players set $chaindestruction:start/_.ignoreid temporary 1
 
     execute if score $chaindestruction:start/_.maxcount temporary matches -2147483648..2147483647 run function chaindestruction:start/_
 
