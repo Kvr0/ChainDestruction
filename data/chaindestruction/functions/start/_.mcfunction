@@ -11,6 +11,10 @@
     execute unless score $chaindestruction:start/_.maxcount temporary matches -2147483648..2147483647 run scoreboard players set $chaindestruction:start/_.maxcount temporary 8
     scoreboard players set $chaindestruction:start/check/dig.result temporary 1
 
+## 下方向の無視
+    execute unless score $chaindestruction:start/_.ignoreunder temporary matches -2147483648..2147483647 store result score $chaindestruction:start/_.ignoreunder temporary run data get storage calculation: input.tool.tag.ChainDestruction.IgnoreUnder
+    execute unless score $chaindestruction:start/_.ignoreunder temporary matches -2147483648..2147483647 run scoreboard players set $chaindestruction:start/_.ignoreunder temporary 0
+
 ## 座標カウンタ
     scoreboard players set $-1 temporary -1
     scoreboard players operation $chaindestruction:start/_.mincount temporary = $chaindestruction:start/_.maxcount temporary
@@ -38,7 +42,7 @@
     execute as @e[tag=ChainDestruction,tag=new,limit=1] at @s positioned ~1 ~ ~ run function chaindestruction:start/check/px
 ## Y-
     scoreboard players set $chaindestruction:start/_.count temporary 0
-    execute unless data storage calculation: input.tool.tag{ChainDestruction:{IgnoreUnder:1b}} as @e[tag=ChainDestruction,tag=new,limit=1] at @s positioned ~ ~-1 ~ run function chaindestruction:start/check/my
+    execute unless score $chaindestruction:start/_.ignoreunder temporary matches 1 as @e[tag=ChainDestruction,tag=new,limit=1] at @s positioned ~ ~-1 ~ run function chaindestruction:start/check/my
 ## Y+
     scoreboard players set $chaindestruction:start/_.count temporary 0
     execute as @e[tag=ChainDestruction,tag=new,limit=1] at @s positioned ~ ~1 ~ run function chaindestruction:start/check/py
